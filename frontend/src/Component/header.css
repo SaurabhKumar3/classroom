@@ -1,0 +1,36 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+}
+.header-left{
+    font-size: 40px;
+    color: green;
+}
+.header-right{
+    padding: 20px;
+}
+.login-button{
+    margin-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left:20px;
+    padding-right: 20px;
+    border-radius: 30px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  .signup-button{
+    margin-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left:20px;
+    padding-right: 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: green;
+    color: None;
+    border: none;
+  }

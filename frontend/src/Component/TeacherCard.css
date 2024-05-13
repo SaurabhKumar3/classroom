@@ -1,0 +1,33 @@
+.teachercard-main{
+    width: 450px;
+    height: 250px;
+    border: 1px solid red;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+.teachercard-wraper{
+    justify-content: space-around;
+    display: flex;
+}
+.teachercard-left{
+    flex: 0.4;
+    margin: 20px;
+}
+.teachercard-right{
+    flex:0.6;
+    margin-top: 0px;
+}
+#teachercard-image{
+    height: auto;
+    width: 100px;
+}
+#requestdemo-button{
+background-color: rgb(47, 224, 106);
+border: none;
+padding: 10px;
+border-radius: 20px;
+cursor: pointer;
+}

@@ -1,0 +1,101 @@
+body{
+  background-color: rgba(219, 243, 243, 0.918);
+
+}
+.main{
+  align-items: center;
+  text-align: center;
+  margin-top: 0px;
+  padding-top: 0px;
+
+}
+.main-wrapper{
+  width: 80%;
+  margin: auto;
+  margin-top: 0px;
+  display: flex;
+}
+.left-item{
+  flex: .3; /* Equal width for both divs */
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin-right: 10px; /* Adjust spacing between the divs */
+  align-items: center;
+  text-align: center;
+}
+
+.right-item{
+  flex: .66; /* Equal width for both divs */
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin-right: 10px; /* Adjust spacing between the divs */
+}
+
+.signup-main{
+  width: 400px;
+  height: 400px;
+  margin: auto;
+  margin-top: 100px;
+  text-align: center;
+  background-color:white;
+}
+.form-element{
+  position: relative;
+  top: 60px;
+}
+.radio-element{
+  display: flex;
+  margin: auto;justify-content: space-evenly;
+}
+.email{
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.password{
+  padding:10px;
+  margin-top: 10px;
+}
+.signup-submit{
+  position: relative;
+  top: 160px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 80px;
+  padding-right: 80px;
+  border-radius: 20px;
+}
+.home-main{
+  background-color: rgb(77, 198, 214);
+  height: 600px;
+  color: white
+}
+.home-wrapper{
+  width: 90%;
+  margin: auto;
+  margin-top: 0px;
+  display: flex;
+}
+.content{
+  width: 500px;
+  font-family: cursive;
+}
+#firstpara{
+  font-size: 30px;
+  padding-top: 0px;
+  margin:0px
+}
+#secondpara{
+  font-size: 70px;
+  margin: 0px;
+}
+#thirdpara{
+  margin-top: 0px;
+  padding: 10px;
+}
+.kidimage{
+  margin: auto;
+}
+#kidlearning{
+  width: 500px;
+  height: auto;
+}
