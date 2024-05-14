@@ -11,20 +11,22 @@ import Signin from './Pages/Signin';
 import { useContext} from 'react';
 import { AuthContext } from './Component/authContext';
 import ScheduleClass from './Component/ScheduleClass';
+import BookDemoClass from './Pages/BookDemoClass';
 
 function App() {
-  const {currentUser}=useContext(AuthContext);
+  const {currentUser,currentTeacher}=useContext(AuthContext);
   console.log(currentUser)
   return (
     <BrowserRouter>
     <Routes>
-      <Route path='/' element={<ScheduleClass/>}/>
+      <Route path='/' element={<BookDemoClass/>}/>
       <Route path='/teacherlist' element={<TeacherList/>}/>
       {currentUser?(<Route path='/student' element={<StudentDashboard/>}/>):(<Route path='/signin' element={<Signin/>}/>)}
       
-      <Route path='/teacher' element={<TeacherDashboard/>}/>
+     {currentTeacher?(<Route path='/teacher' element={<TeacherDashboard/>}/>):(<Route path='/signin' element={<Signin/>}/>)}
       <Route path='/signup' element={<Signup/>}/>
       <Route path='/signin' element={<Signin/>}/>
+      <Route path='/democlass' element={<bookDemoClass/>}/>
     </Routes>
     </BrowserRouter>
   );

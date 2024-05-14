@@ -48,6 +48,9 @@ const teacherSchema=({
         type:String,
         required:true
     },
+    description:{
+        type:String
+    },
     education:{
         type:String,
         default:"B.A."
@@ -57,7 +60,7 @@ const teacherSchema=({
         default:1
     },
     bookedDate:{
-        type:String
+        type:[String]
     }
 
 })

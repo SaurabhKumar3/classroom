@@ -4,7 +4,7 @@ import Datetime from 'react-datetime';
 import 'react-calendar/dist/Calendar.css';
 import 'react-datetime/css/react-datetime.css';
 
-
+import './ScheduleClass.css'
 
 export default function ScheduleClass(){
     const [date, setDate] = useState(new Date());
@@ -12,14 +12,22 @@ export default function ScheduleClass(){
     const onChange = (selectedDate) => {
         setDate(selectedDate);
       };
-      console.log(date)
       function handlechange(e){
         settime(e.target.value);
       }
+      function handleavailability(){
+        const booking_array=["Sat May 18 202412 pm"]
+        let bookingslot=date.toDateString()+time;
+      if(booking_array.includes(bookingslot)){
+          console.log("slot is booked")
+      }
+      else{
+        //insert bookingslot into array and update it in database using api
+      }
+          }
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <h1>Calendar Example</h1>
-      <div style={{ width: '300px', height: '300px' }}>
+    <div className='calender-main'>
+      <div className='calender-date'>
         <Calendar
           onChange={onChange}
           value={date}
@@ -27,6 +35,7 @@ export default function ScheduleClass(){
         />
       </div>
       <div className='calender-time-items'>
+        Select Time
         <select value={time} onChange={handlechange}>
           <option value={"10 am"}>10 am</option>
           <option value={"11 am"}>11 am</option>
@@ -43,6 +52,7 @@ export default function ScheduleClass(){
       <div style={{ marginTop: '20px', fontSize: '18px' }}>
         Selected Date: {date.toDateString()} and Time:{time}
       </div>
+      <button className='avail-button' onClick={handleavailability}>Check for Availability</button>
     </div>
 
   );

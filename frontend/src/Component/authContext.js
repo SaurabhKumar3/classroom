@@ -7,20 +7,28 @@ export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(localStorage.getItem("user")) || null
   );
-  console.log(currentUser);
+  const [currentTeacher,setcurrentTeacher]=useState(
+    JSON.parse(localStorage.getItem("teacher")) || null
+
+  )
 
   const login = async (email,password) => {
     const res=await axios.post('http://localhost:8000/signin',{email,password})
     setCurrentUser(res.data)
     return res.data;
   };
-  console.log(currentUser);
+  const teacherlogin = async (email,password) => {
+    const res=await axios.post('http://localhost:8000/teacher/signin',{email,password})
+    setcurrentTeacher(res.data)
+    return res.data;
+  };
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(currentUser));
-  }, [currentUser]);
+    localStorage.setItem("teacher", JSON.stringify(currentTeacher));
+  }, [currentUser,currentTeacher]);
 
   return (
-    <AuthContext.Provider value={{ currentUser, login }}>
+    <AuthContext.Provider value={{ currentUser, login,currentTeacher,teacherlogin}}>
       {children}
     </AuthContext.Provider>
   );

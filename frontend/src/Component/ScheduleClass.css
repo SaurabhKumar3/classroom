@@ -1,0 +1,30 @@
+.calender-main{
+    height: 600px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    top: 20px;
+    position: relative;
+   
+}
+.calender-date{
+    height: 300px;
+    width: 300px;
+}
+.calender-time-items{
+    position: relative;
+    top: 20px;
+}
+.avail-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.avail-button:hover {
+    background-color: darkgreen;
+}
