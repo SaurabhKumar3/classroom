@@ -1,12 +1,11 @@
 .teachercard-main{
     width: 450px;
     height: 250px;
-    border: 1px solid red;
     margin: auto;
     align-items: center;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
+    background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 .teachercard-wraper{
     justify-content: space-around;

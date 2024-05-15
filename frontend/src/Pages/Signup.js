@@ -25,7 +25,6 @@ export default function Signup(){
     
     async function handlesubmit(){
         if(selectedoption==="student"){
-            console.log("student");
             try{
                await axios.post('http://localhost:8000/signup',{name,email,password})
                navigate('/signin')
@@ -35,10 +34,9 @@ export default function Signup(){
             }
         }
         if(selectedoption==="teacher"){
-            console.log("teacher");
             try{
                await axios.post('http://localhost:8000/teacher/signup',{name,email,password})
-               navigate('/teacher/signin');
+               navigate('/signin');
             }
             catch(error){
                 console.log(error);

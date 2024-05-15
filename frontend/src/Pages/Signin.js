@@ -24,7 +24,6 @@ export default function Signin(){
     
     async function handlesubmit(){
         if(selectedoption==="student"){
-            console.log("student");
             try{
                 const response=await login(email,password);
                 navigate('/student',{state:response.data})
@@ -34,10 +33,9 @@ export default function Signin(){
             }
         }
         if(selectedoption==="teacher"){
-            console.log("/teacher");
             try{
                 const response=await teacherlogin(email,password);
-                navigate('/teacher')
+                navigate('/teacher',{state:response.data})
             }
             catch(error){
                 console.log(error);

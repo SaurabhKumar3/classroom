@@ -1,0 +1,12 @@
+.personal-main{
+    position: absolute;
+    right: 50px;
+    align-items: center;
+    text-align: center;
+}
+.personal-main ul{
+}
+.personal-main ul li{
+    list-style: none;
+
+}
