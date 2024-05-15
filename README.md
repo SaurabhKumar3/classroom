@@ -1,5 +1,8 @@
-The Teacher-Student Connection Platform is designed to facilitate the interaction between
-teachers and students in an online learning environment. This platform will provide features for
+![classroom](https://github.com/SaurabhKumar3/classroom/assets/73293356/9deb8cb9-4218-474f-bd05-592e632c7537)
+![Screenshot (9)](https://github.com/SaurabhKumar3/classroom/assets/73293356/0614671e-269a-45e5-9a26-81f4e0a22aaa)
+
+
+The Teacher-Student Connection Platform is designed to facilitate the interaction between teachers and students in an online learning environment. This platform will provide features for
 teacher and student management, scheduling, feedback, and content sharing.
 
 2. User Profiles:
