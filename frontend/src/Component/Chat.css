@@ -1,0 +1,20 @@
+.chat-main{
+    height: auto;
+    width: auto;
+    background-color: rgba(238, 224, 224, 0.568);
+    border: 2px solid grey;
+
+}
+.chat-content{
+    height: 400px;
+    width: auto;
+}
+.chat-input input{
+    width: 80%;
+    align-items: left;
+    padding: 15px;
+}
+.chat-input button{
+    padding: 15px;
+    margin: 10px;
+}

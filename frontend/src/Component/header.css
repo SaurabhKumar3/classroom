@@ -36,3 +36,17 @@
     color: None;
     border: none;
   }
+  .noticeanduser{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+  }
+  .bellicon{
+    margin-right: 200px;
+    margin-left: 70px;
+}
+.allteacher{
+  text-decoration: none;
+  color: inherit;
+}

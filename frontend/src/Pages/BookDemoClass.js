@@ -8,7 +8,6 @@ export default function BookDemoClass(){
     const location=useLocation();
     const {state}=location;
     const feedback=state.feedback;
-    console.log("bookdemoclass",state)
     return <div>
             <Header/>
             <div className='main'>

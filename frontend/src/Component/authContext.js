@@ -9,7 +9,9 @@ export const AuthProvider = ({ children }) => {
   );
   const [currentTeacher,setcurrentTeacher]=useState(
     JSON.parse(localStorage.getItem("teacher")) || null
-
+  )
+  const [currentAdmin,setCurrentAdmin]=useState(
+    JSON.parse(localStorage.getItem("admin")) || null
   )
 
   const login = async (email,password) => {
@@ -22,13 +24,19 @@ export const AuthProvider = ({ children }) => {
     setcurrentTeacher(res.data)
     return res.data;
   };
+  const adminlogin = async (email,password) => {
+    const res=await axios.post('http://localhost:8000/admin/signin',{email,password})
+    setCurrentAdmin(res.data)
+    return res.data;
+  };
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(currentUser));
     localStorage.setItem("teacher", JSON.stringify(currentTeacher));
-  }, [currentUser,currentTeacher]);
+    localStorage.setItem("admin", JSON.stringify(currentAdmin));
+  }, [currentUser,currentTeacher,currentAdmin]);
 
   return (
-    <AuthContext.Provider value={{ currentUser, login,currentTeacher,teacherlogin}}>
+    <AuthContext.Provider value={{ currentUser, login,currentTeacher,teacherlogin,adminlogin,currentAdmin}}>
       {children}
     </AuthContext.Provider>
   );

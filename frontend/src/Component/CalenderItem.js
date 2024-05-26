@@ -1,12 +1,14 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Calendar from 'react-calendar';
 import Datetime from 'react-datetime';
 import 'react-calendar/dist/Calendar.css';
 import 'react-datetime/css/react-datetime.css';
 import axios from 'axios';
 import './CalenderItem.css'
-
+import { useContext } from 'react';
+import { AuthContext } from './authContext';
 export default function CalenderItem({ state }) {
+  const {currentUser}=useContext(AuthContext);
   const [date, setDate] = useState(new Date());
   const [time, settime] = useState("10 am");
   const [slot, setslot] = useState('');
@@ -18,13 +20,13 @@ export default function CalenderItem({ state }) {
     settime(e.target.value);
     setslot('')
   }
-  let booking_array = state.bookedDate;
+  let teacher_booking_array = [];
   let bookingslot = date.toDateString() + time;
   let flag=false;
+  const studentId=currentUser._id;
+ 
   function handleavailability() {
-    booking_array.forEach(element => {
-      console.log("element",element)
-      console.log('bookingslot',bookingslot)
+    teacher_booking_array.forEach(element => {
       if(element.bookedDate===bookingslot){
         setslot('red');
         flag=true;
@@ -37,16 +39,21 @@ export default function CalenderItem({ state }) {
 
   function handlebookdemo() {
     const itemId=state._id;
-    booking_array.push({bookedDate:bookingslot,user:'user',status:"pending"});
+    let student_booked_array=[];
+    const studentId=currentUser._id;
+    teacher_booking_array.push({username:currentUser.name,userid:studentId,bookingDate:bookingslot,status:"pending"});
+    const teachername=state.name;
+    student_booked_array.push({username:teachername,userid:itemId,bookingDate:bookingslot,status:'pending'});
+    console.log(student_booked_array)
     try{
-      const response=axios.put(`http://localhost:8000/api/teacher/${itemId}`,{bookedDate:booking_array});
-      console.log(response.data);
+      const response=axios.put(`http://localhost:8000/api/teacher/bookingdate/${itemId}`,{bookedDate:teacher_booking_array});
+      const response2=axios.put(`http://localhost:8000/api/student/bookingdate/${studentId}`,{bookedDate:student_booked_array});
+      console.log(response2.data);
     }
     catch(error){
       console.log(error);
     }
   }
-console.log(booking_array)
   return (
     <div className='calender-main'>
       <div className='calender-date'>

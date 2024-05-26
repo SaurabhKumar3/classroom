@@ -1,0 +1,8 @@
+.notice-main{
+    background-color: beige;
+    width: 200px;
+    position: absolute;
+    right: 250px;
+    top: 50px;
+    cursor:default;
+}

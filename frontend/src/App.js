@@ -12,9 +12,12 @@ import { useContext} from 'react';
 import { AuthContext } from './Component/authContext';
 import BookDemoClass from './Pages/BookDemoClass';
 import Classroom from './Pages/Classroom';
+import AdminLogin from './Pages/AdminLogin';
+import AdminDashboard from './Pages/AdminDashboard';
 
 function App() {
-  const {currentUser,currentTeacher}=useContext(AuthContext);
+  const {currentUser,currentTeacher,currentAdmin}=useContext(AuthContext);
+  console.log(currentUser)
   return (
     <BrowserRouter>
     <Routes>
@@ -27,6 +30,9 @@ function App() {
       <Route path='/signin' element={<Signin/>}/>
       <Route path='/democlass' element={<BookDemoClass/>}/>
       <Route path='/classroom' element={<Classroom/>}/>
+      <Route path='/adminsignin' element={<AdminLogin/>}/>
+      {currentAdmin?<Route path='/admin' element={<AdminDashboard/>}/>:<Route path='/adminsignin' element={<AdminLogin/>}/>}
+
     </Routes>
     </BrowserRouter>
   );

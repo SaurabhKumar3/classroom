@@ -6,7 +6,7 @@ body{
   align-items: center;
   margin-top: 0px;
   padding-top: 0px;
-
+  text-align: center;
 }
 .main-wrapper{
   width: 80%;
@@ -28,6 +28,8 @@ body{
   padding: 20px;
   border: 1px solid #ccc;
   margin-right: 10px; /* Adjust spacing between the divs */
+  text-align: left;
+  align-items: left;
 }
 
 .signup-main{

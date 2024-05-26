@@ -1,0 +1,14 @@
+.dashboard-main{
+    width: 80%;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+}
+
+.itemcard{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid grey;
+    padding: 10px;
+    height: 40px;
+}

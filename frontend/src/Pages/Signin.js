@@ -26,7 +26,10 @@ export default function Signin(){
         if(selectedoption==="student"){
             try{
                 const response=await login(email,password);
+                console.log(response);
+                if(response){
                 navigate('/student',{state:response.data})
+                }
             }
             catch(error){
                 console.log(error);
